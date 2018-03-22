@@ -1,7 +1,11 @@
 package com.borjabravo.daggerinnocv.presentation.general
 
-interface BasePresenter<in T : BaseView> {
+open class BasePresenter<T : BaseView> {
 
-    fun init(view: T)
+    lateinit var view: T
+
+    open fun init(view: T) {
+        this.view = view
+    }
 
 }

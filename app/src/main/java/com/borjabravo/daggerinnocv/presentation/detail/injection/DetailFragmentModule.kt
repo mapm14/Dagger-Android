@@ -1,14 +1,14 @@
 package com.borjabravo.daggerinnocv.presentation.detail.injection
 
-import com.borjabravo.daggerinnocv.presentation.detail.DetailFragmentContract.DetailFragmentPresenter
-import com.borjabravo.daggerinnocv.presentation.detail.DetailFragmentPresenterImpl
-import dagger.Binds
+import com.borjabravo.daggerinnocv.presentation.detail.DetailFragmentPresenter
+import com.borjabravo.daggerinnocv.usecase.user.GetUserUseCase
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class DetailFragmentModule {
+class DetailFragmentModule {
 
-    @Binds
-    abstract fun detailPresenter(detailFragmentPresenterImpl: DetailFragmentPresenterImpl): DetailFragmentPresenter
+    @Provides
+    fun detailPresenter(getUserUseCase: GetUserUseCase) = DetailFragmentPresenter(getUserUseCase)
 
 }

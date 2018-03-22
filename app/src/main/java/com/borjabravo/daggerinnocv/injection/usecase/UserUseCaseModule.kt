@@ -1,14 +1,15 @@
 package com.borjabravo.daggerinnocv.injection.usecase
 
+import com.borjabravo.daggerinnocv.domain.User
 import com.borjabravo.daggerinnocv.usecase.user.GetUserUseCase
-import com.borjabravo.daggerinnocv.usecase.user.GetUserUseCaseImpl
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import javax.inject.Named
 
 @Module
-abstract class UserUseCaseModule {
+class UserUseCaseModule {
 
-    @Binds
-    abstract fun getUser(getUserUseCaseImpl: GetUserUseCaseImpl): GetUserUseCase
+    @Provides
+    fun getUserUseCase(@Named("Manu") userManu: User) = GetUserUseCase(userManu)
 
 }

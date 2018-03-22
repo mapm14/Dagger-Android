@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.borjabravo.daggerinnocv.R
-import com.borjabravo.daggerinnocv.presentation.detail.DetailFragmentContract.DetailFragmentPresenter
-import com.borjabravo.daggerinnocv.presentation.detail.DetailFragmentContract.DetailFragmentView
 import dagger.android.DaggerFragment
 import org.jetbrains.anko.toast
 import javax.inject.Inject

@@ -1,14 +1,15 @@
 package com.borjabravo.daggerinnocv.presentation.main.injection
 
-import com.borjabravo.daggerinnocv.presentation.main.MainActivityContract.MainActivityPresenter
-import com.borjabravo.daggerinnocv.presentation.main.MainActivityPresenterImpl
-import dagger.Binds
+import com.borjabravo.daggerinnocv.domain.User
+import com.borjabravo.daggerinnocv.presentation.main.MainActivityPresenter
 import dagger.Module
+import dagger.Provides
+import javax.inject.Named
 
 @Module
-abstract class MainActivityModule {
+class MainActivityModule {
 
-    @Binds
-    abstract fun mainPresenter(mainActivityPresenterImpl: MainActivityPresenterImpl): MainActivityPresenter
+    @Provides
+    fun mainPresenter(@Named("Pepe") userPepe: User) = MainActivityPresenter(userPepe)
 
 }
