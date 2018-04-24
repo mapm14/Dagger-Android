@@ -2,7 +2,6 @@ package com.borjabravo.daggerinnocv.injection.activity
 
 import com.borjabravo.daggerinnocv.injection.scopes.PerActivity
 import com.borjabravo.daggerinnocv.presentation.main.MainActivity
-import com.borjabravo.daggerinnocv.presentation.main.injection.MainActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,7 +9,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = [MainActivityModule::class])
+    @ContributesAndroidInjector
     abstract fun mainActivityInjector(): MainActivity
 
 }
