@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.borjabravo.daggerinnocv.R
 import com.borjabravo.daggerinnocv.extensions.goToExtendedActivity
-import dagger.android.DaggerFragment
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_detail.*
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 class DetailFragment : DaggerFragment(), DetailFragmentView {
@@ -26,7 +26,7 @@ class DetailFragment : DaggerFragment(), DetailFragmentView {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button.setOnClickListener { goToExtendedActivity() }
     }
